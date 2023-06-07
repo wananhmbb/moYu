@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>多啦A梦</title>
   </head>
   <style type="text/css">
     div {
@@ -30,6 +30,15 @@
     var can = document.getElementById("cv");
     var cxt = can.getContext("2d");
 
+
+    // 创建一个图片对象：
+    var img = new Image();
+    img.src = './img/铃铛.png';
+    // 图片加载完成之后绘制图片：
+    img.onload = function () {
+        cxt.drawImage(img,183,330);
+    }
+
     var x = Math.floor(can.getBoundingClientRect().left);
     var y = Math.floor(can.getBoundingClientRect().top);
     window.onmousedown = function (event) {
@@ -43,7 +52,7 @@
     }
     // 大头
     cxt.beginPath();
-    cxt.arc(200, 175, 175, 0.7 * Math.PI, 0.3 * Math.PI); //绘制弧，中心点（200，175），半径175
+    cxt.arc(200, 175, 175, 0.7 * Math.PI, 0.3 * Math.PI); //绘制弧，中心点（200，175），半径175 起始点 结束点
     cxt.fillStyle = "#0bb0da";
     cxt.fill();
     cxt.stroke();
@@ -75,7 +84,7 @@
     cxt.stroke();
     cxt.closePath();
 
-    // 左右眼球
+    // 右眼球
     cxt.beginPath();
     cxt.fillStyle = "#000";
     cxt.arc(230, 130, 12, 0, 2 * Math.PI);
